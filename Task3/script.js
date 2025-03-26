@@ -31,7 +31,7 @@ function chooseExpenses() {
         
         if ( (typeof(expenses_item_key)) === 'string' && (typeof(expenses_item_key)) != null 
             && (typeof(expenses_item_value)) != null && expenses_item_key != '' 
-            && expenses_item_key != '' && expenses_item_key.length < 50 && !isNaN(+expenses_item_value)) {
+            && expenses_item_key.length < 50 && !isNaN(+expenses_item_value)) {
             
             console.log("Input " + expenses_item_key + " = " + expenses_item_value);
             appData.expenses[expenses_item_key] = expenses_item_value;

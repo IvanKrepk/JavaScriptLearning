@@ -20,8 +20,7 @@ title.textContent = 'Мы продаем только подлинную тех�
 
 // Удалить рекламу
 let marketing = document.querySelector('.adv');
-let marketingParent = marketing.parentElement;
-marketingParent.removeChild(marketing);
+marketing.remove();
 
 // Спросить у пользователя
 let feedback = prompt('Напишите ваше отношение к технике Apple');

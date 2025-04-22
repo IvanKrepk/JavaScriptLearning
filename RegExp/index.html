@@ -9,16 +9,40 @@
 <body>  
     <div class="main">
         <div class="block_reg_exp">
-            <span>Введите регулярное выражение:</span>
+            <h2>Введите регулярное выражение:</h2>
             <input id="txt_reg_exp" type="text"></input>
         </div>
-        <div class="block_input_text">
-            <span>Введите текст:</span>
-            <textarea id="txt_text_input"></textarea>
-        </div>    
-        <div class="block_result">
-            <span>Результат работы регулярного выражения:</span>
-            <textarea id="txt_text_result"></textarea>    
+        <div class="block_center">
+            <div class="block_data">
+                <div class="block_input_text">
+                    <h2>Введите текст:</h2>
+                    <textarea id="txt_text_input"></textarea>
+                </div>    
+                <div class="block_result">
+                    <h2>Результат работы регулярного выражения:</h2>
+                    <textarea id="txt_text_result"></textarea>    
+                </div>
+            </div>
+            <div class="block_hints">
+                <h2>Подсказки</h2>
+                <div class="block_hint_group">
+                    <h3>Флаги</h3>
+                    <span>i - игнорирование регистров</span>
+                    <span>g - искать все вхождения</span>
+                    <span>m - многострочность</span>
+                </div>
+                <div class="block_hint_group">
+                    <h3>Классы символов</h3>
+                    <span>\d - искать все цифры</span>
+                    <span>\D - искать не цифру</span>
+                    <br>
+                    <span>\w - искать все буквы</span>
+                    <span>\W - искать не буквы</span>
+                    <br>
+                    <span>\s - искать все пробелы</span>
+                    <span>\S - искать не пробелы</span>
+                </div>
+            </div>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

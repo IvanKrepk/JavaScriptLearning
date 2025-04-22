@@ -1,38 +1,108 @@
+:root {
+    --palette-background-l0: rgb(32, 32, 37);
+    --palette-background-l1: rgb(57, 59, 63);
+    --palette-background-l2: rgb(76, 80, 87);
+    --palette-background-text: rgb(255, 255, 255);
+    --palette-otline-focused: rgb(131, 131, 153);
+    --palette-box-shadow-focused: rgb(102, 92, 92);
+}
+
 * {
+    font-size: large;
     margin: 0;
     padding: 0;
+    color: antiquewhite;
+}
+
+h2 {
+    background: linear-gradient(to right bottom, rgb(50, 150, 100), rgb(0, 100, 100)70%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: rgb(255, 250, 242);
+    padding: 5px;
+}
+
+textarea {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type = 'text'], textarea {
+    margin: 0 5px 5px 5px;
+    background-color: var(--palette-background-text);
+    color: black;
+}
+
+input[type = 'text']:hover, textarea:hover {
+    box-shadow: inset 0 0 5px var(--palette-box-shadow-focused);
+    outline: 1px solid var(--palette-otline-focused);
+}
+
+input[type = 'text']:focus, textarea:focus {
+    outline: 1px solid var(--palette-otline-focused);
 }
 
 .main {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: var(--palette-background-l0);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.block_center {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.block_data {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+}
+
+.block_hints {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 0 0;
+    border-radius: 5px;
+    width: 30%;
+    background-color: var(--palette-background-l1);
+}
+
+.block_hint_group {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--palette-background-l2);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .block_reg_exp {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--palette-background-l1);
 }
 
 .block_input_text {
     display: flex;
     flex-direction: column;
     height: 50%;
-    margin: 10px;
-}
-
-.block_input_text textarea {
-    height: 100%;
+    margin: 5px 5px 0px 0px;
+    background-color: var(--palette-background-l1);
+    border-radius: 5px;
 }
 
 .block_result {
     display: flex;
     flex-direction: column;
     height: 50%;
-    margin: 10px;
-}
-
-.block_result textarea {
-    height: 100%;
+    margin: 5px 5px 0px 0px;
+    background-color: var(--palette-background-l1);
+    border-radius: 5px;
 }

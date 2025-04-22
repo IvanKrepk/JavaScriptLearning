@@ -34,19 +34,20 @@ let txtTextInput = document.querySelector("#txt_text_input");
 let txtRegExp = document.querySelector("#txt_reg_exp");
 let txtTextResult = document.querySelector("#txt_text_result")
 
-txtTextInput.addEventListener('input', function() {
+function regExpExecute() {
     textExample = txtTextInput.value;
-    
-    let regularExp = new RegExp(textRegExp, "g");
-    result = textExample.match(regularExp);
-    txtTextResult.value = result;
-    console.log('text = ' + textExample + ', regexp = ' + textRegExp + ', result = ' + result);
-});
-
-txtRegExp.addEventListener('input', function() {
     textRegExp = txtRegExp.value;
-    let regularExp = new RegExp(textRegExp);
-    result = textExample.match(regularExp);
-    txtTextResult.value = result;
-    console.log('text = ' + textExample + ', regexp = ' + textRegExp + ', result = ' + result);
-});
+
+    if ((textExample != '') && (textRegExp != '')) {
+        let regularExp = new RegExp(textRegExp, "g");
+        result = textExample.match(regularExp);
+        txtTextResult.value = result;
+        console.log('text = ' + textExample + ', regexp = ' + textRegExp + ', result = ' + result); 
+    } else {
+        txtTextResult.value = '';
+    }   
+};
+
+txtTextInput.addEventListener('input', regExpExecute);
+
+txtRegExp.addEventListener('input', regExpExecute);

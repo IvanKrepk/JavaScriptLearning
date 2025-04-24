@@ -5,6 +5,9 @@
     --palette-background-text: rgb(255, 255, 255);
     --palette-otline-focused: rgb(131, 131, 153);
     --palette-box-shadow-focused: rgb(102, 92, 92);
+    --palette-text-shadow-flags-checked: rgb(81, 147, 233);
+    --palette-text-shadow-flags-unchecked: rgb(189, 180, 180);
+    --palette-background-flags-active: rgb(50, 53, 58);
 }
 
 * {
@@ -82,11 +85,43 @@ input[type = 'text']:focus, textarea:focus {
     border-radius: 5px;
 }
 
+.block_reg_exp_constructor {
+    display: flex;
+    flex-direction: row;
+}
+
 .block_reg_exp {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     background-color: var(--palette-background-l1);
+    width: 69.5%;
+    margin: 0 5px 0 0;
+}
+
+.block_reg_exp_sample {
+    display: inline-block;
+    text-align: center;
+}
+
+.block_reg_exp_sample span {
+    color: var(--palette-background-text);
+}
+
+.block_reg_exp_flags {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--palette-background-l1);
+    width: 30%;
+}
+
+.block_flags {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    padding-left: 5px;
 }
 
 .block_input_text {
@@ -105,4 +140,42 @@ input[type = 'text']:focus, textarea:focus {
     margin: 5px 5px 0px 0px;
     background-color: var(--palette-background-l1);
     border-radius: 5px;
+}
+
+.cb_reg_exp_flag {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;  
+  }
+  
+.cb_reg_exp_flag+label {
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--palette-background-l2);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    width: 1em;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+
+:not(.cb_reg_exp_flag:checked)+label {
+    color: var(--palette-text-shadow-flags-unchecked);
+}
+
+.cb_reg_exp_flag:checked+label {
+    color: var(--palette-text-shadow-flags-checked);
+    background-color: var(--palette-background-flags-active);
+}
+
+.cb_reg_exp_flag+label:hover {
+    color: var(--palette-text-shadow-flags-checked);
+    text-shadow: 0 0 5px var(--palette-text-shadow-flags-checked);
+    box-shadow: 0 0 10px var(--palette-text-shadow-flags-checked);
+}
+
+.cb_reg_exp_flag+label:active {
+    background-color: var(--palette-background-flags-active);
 }

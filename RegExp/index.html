@@ -8,9 +8,28 @@
 </head>
 <body>  
     <div class="main">
-        <div class="block_reg_exp">
-            <h2>Введите регулярное выражение:</h2>
-            <input id="txt_reg_exp" type="text"></input>
+        <div class="block_reg_exp_constructor">
+            <div class="block_reg_exp">
+                <h2>Введите регулярное выражение:</h2>
+                <input id="txt_reg_exp" type="text"></input>
+                <div class="block_reg_exp_sample">
+                    Синтаксис JavaScript:
+                    <span id="lblRegExpSample">/RegExpSample/</span>
+                </div>
+            </div>
+            <div class="block_reg_exp_flags">
+                <h2>Укажите флаги</h2>
+                <div class="block_flags">
+                    <div>
+                        <input type="checkbox" class="cb_reg_exp_flag" id="cbFlagIndependentRegister"/>
+                        <label for="cbFlagIndependentRegister">i</label> 
+                    </div>  
+                    <div>
+                        <input type="checkbox" class="cb_reg_exp_flag" id="cbFlagGlobalSearch"/>
+                        <label for="cbFlagGlobalSearch">g</label> 
+                    </div>    
+                </div>
+            </div>
         </div>
         <div class="block_center">
             <div class="block_data">

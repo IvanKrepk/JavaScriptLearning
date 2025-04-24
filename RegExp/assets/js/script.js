@@ -33,13 +33,25 @@ let result = '';
 let txtTextInput = document.querySelector("#txt_text_input");
 let txtRegExp = document.querySelector("#txt_reg_exp");
 let txtTextResult = document.querySelector("#txt_text_result")
+let blockRegExpSample = document.querySelector(".block_reg_exp_sample");
+let lblRegExpSample = blockRegExpSample.querySelector("span");
+let cbFlagIndependentRegister = document.querySelector("#cbFlagIndependentRegister");
+let cbFlagGlobalSearch = document.querySelector("#cbFlagGlobalSearch");
 
 function regExpExecute() {
     textExample = txtTextInput.value;
     textRegExp = txtRegExp.value;
 
+    let flags = "";
+    if (cbFlagIndependentRegister.checked) {
+        flags = flags + "i";
+    }
+    if (cbFlagGlobalSearch.checked) {
+        flags = flags + "g";
+    }
+
     if ((textExample != '') && (textRegExp != '')) {
-        let regularExp = new RegExp(textRegExp, "g");
+        let regularExp = new RegExp(textRegExp, flags);
         result = textExample.match(regularExp);
         txtTextResult.value = result;
         console.log('text = ' + textExample + ', regexp = ' + textRegExp + ', result = ' + result); 
@@ -48,6 +60,24 @@ function regExpExecute() {
     }   
 };
 
+function setRegExpSample() {
+    let sample = "/" + txtRegExp.value + "/";
+    let flagI = (cbFlagIndependentRegister.checked) ? ("i") : ("");
+    sample = sample + flagI;
+    lblRegExpSample.innerHTML = sample;
+}
+
+function regExpChanged() {
+    setRegExpSample();
+}
+
 txtTextInput.addEventListener('input', regExpExecute);
 
 txtRegExp.addEventListener('input', regExpExecute);
+txtRegExp.addEventListener('input', regExpChanged);
+cbFlagIndependentRegister.addEventListener('click', regExpExecute);
+cbFlagIndependentRegister.addEventListener('click', regExpChanged);
+cbFlagGlobalSearch.addEventListener('click', regExpExecute);
+cbFlagGlobalSearch.addEventListener('click', regExpChanged);
+
+setRegExpSample();

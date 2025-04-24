@@ -63,7 +63,8 @@ function regExpExecute() {
 function setRegExpSample() {
     let sample = "/" + txtRegExp.value + "/";
     let flagI = (cbFlagIndependentRegister.checked) ? ("i") : ("");
-    sample = sample + flagI;
+    let flagG = (cbFlagGlobalSearch.checked) ? ("g") : ("");
+    sample = sample + flagI + flagG;
     lblRegExpSample.innerHTML = sample;
 }
 

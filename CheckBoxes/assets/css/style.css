@@ -1,0 +1,115 @@
+/*Standart checkbox*/
+label {
+  font-size: 1.5rem;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  box-shadow: -2px 0px 5px rebeccapurple;
+  transform: scale(1.6);
+  accent-color: rgb(255, 0, 0);
+}
+
+/*Кастомная галочка*/
+.wr-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.wr-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.wr-checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  border: 2px solid #4CAF50;
+  border-radius: 0em;
+  margin-right: 0.5em;
+  position: relative;
+}
+.wr-checkbox:checked+label::before {
+    content: "✔️";
+    position: relative;
+}
+
+/*Toggle checkbox*/
+.switch_toggle {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.switch_toggle+label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  background-color: gray;
+  width: 3em;
+  height: 1.5em;
+  border-radius: 20px;
+}
+
+.switch_toggle:checked+label {
+  background-color: cadetblue;
+}
+
+.switch_toggle+label::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #eee;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.switch_toggle:checked+label::after {
+  left: calc(100%);
+  transform: translateX(calc(-100%));
+}
+
+.switch_toggle+label:active::after {
+  width: 2em;
+}
+
+/* .switch_toggle+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 3em;
+  height: 1.3em;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.switch_toggle+label::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1.4em;
+  height: 1.4em;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.switch_toggle:checked+label {
+  background: #bada55;
+}
+
+.switch_toggle:checked+label::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.switch_toggle+label:active:after {
+  width: 2em;
+} */

@@ -1,3 +1,16 @@
+:root {
+    --palette-primary: #293594;
+    --palette-primary--rgb: 41, 53, 148;
+    --palette-secondary: #90bc29;
+    --palette-secondary--rgb: 144, 188, 41;
+    --palette-text: #f2f2f2;
+    --palette-border-focused: #8db6c4;
+    --palette-text--rgb: 242, 242, 242;
+    --palette-text-invert: #0d0d0d;
+    --palette-text-invert--rgb: 13, 13, 13;
+}
+
+/*#region CSS only style*/
 .css-custom-select {
     min-width: 350px;
     position: relative;
@@ -38,8 +51,9 @@
     cursor: pointer;
     width: 100%;
 }
+/*#endregion*/
 
-/* CSS-JS style */
+/*#region CSS-JS style*/
 .css-js-custom-select {
     margin-top: 3rem;
     position: relative;
@@ -118,3 +132,84 @@
 .select-dropdown.hidden {
     display: none;
 }
+/*#endregion*/
+
+/*#region My Dropdown */
+
+.elsy-dropdown {
+    display: inline-block;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 300px;
+    --font-family: font-family;
+    --font-size: font-size;
+    --arrow-size: 0.6rem;
+    --border-radius: 5px;
+}
+
+.elsy-dropdown button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    cursor: pointer;
+    user-select: none;
+}
+
+.elsy-dropdown button:focus {
+    border-color: var(--palette-border-focused);
+}
+
+.elsy-dropdown .dropdown-arrow {
+    margin-left: 10px;
+    border-right: var(--arrow-size) solid transparent;
+    border-left: var(--arrow-size) solid transparent;
+    border-bottom: none;
+    border-top: var(--arrow-size) solid black;
+}
+
+.elsy-dropdown ul {
+    padding: 0;
+    border: 1px solid var(--palette-border-focused);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-top: none;
+    list-style: none;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+.elsy-dropdown ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+.elsy-dropdown ul::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-bottom-right-radius: 5px;
+}
+
+.elsy-dropdown ul::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-bottom-right-radius: 5px;
+}
+
+.elsy-dropdown ul li {
+    padding: 5px;
+}
+
+.elsy-dropdown ul li:hover {
+    background-color: var(--palette-primary);
+    color: var(--palette-text);
+}
+
+.dropdown-hidden {
+    display: none;
+}
+/*#endregion*/

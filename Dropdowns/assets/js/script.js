@@ -66,11 +66,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 elsyDropDownList.classList.toggle("dropdown-hidden", toHide);
 
             toggleArrow();
+
+            if (elsyDropDownList.classList.contains("dropdown-hidden")) {
+                elsyDropDownButton.style.borderBottom = "1px solid var(--color-border)";
+                elsyDropDownList.style.borderTop = "1px solid var(--color-border)";
+                elsyDropDownButton.style.borderBottomLeftRadius = "var(--border-radius)";
+                elsyDropDownButton.style.borderBottomRightRadius = "var(--border-radius)";
+            } else {
+                elsyDropDownButton.style.borderBottom = "none";    
+                elsyDropDownList.style.borderTop = "none";  
+                elsyDropDownButton.style.borderBottomLeftRadius = "0px";
+                elsyDropDownButton.style.borderBottomRightRadius = "0px";  
+            }
         };
 
         elsyDropDownButton.addEventListener("click", () => {
             toggleDropdown();
-            elsyDropDown.style.borderColor = "var(--color-border-focused)";
+            elsyDropDownButton.style.borderColor = "var(--color-border-focused)";
+            elsyDropDownList.style.borderColor = "var(--color-border-focused)";
         });
 
         elsyDropDownButton.addEventListener("blur", () => {
@@ -78,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => { 
                 toggleDropdown(true); 
                 if (!isFocused) {
-                    elsyDropDown.style.borderColor = "var(--color-border)";
+                    elsyDropDownButton.style.borderColor = "var(--color-border)";
+                    elsyDropDownList.style.borderColor = "var(--color-border)";
                 }
             }, 150);
         });
